@@ -27,8 +27,8 @@ public class SortingApplication {
         System.out.println("Time taken for " + sorterType + " Sort: " + timeTaken + " ns");
 
         // Read benchmark data
-        String xCsvFilePath = "src/main/java/com/nighthawk/spring_portfolio/sorters/benchmark_data/" + sorterType + "XData.csv";
-        String yCsvFilePath = "src/main/java/com/nighthawk/spring_portfolio/sorters/benchmark_data/" + sorterType + "YData.csv";
+        String xCsvFilePath = "src/main/java/com/nighthawk/spring_portfolio/mvc/sorters/benchmark_data/" + sorterType + "XData.csv";
+        String yCsvFilePath = "src/main/java/com/nighthawk/spring_portfolio/mvc/sorters/benchmark_data/" + sorterType + "YData.csv";
         double[][] benchmarkData = CSVUtil.readBenchmarkData(xCsvFilePath, yCsvFilePath);
 
         // Visualize data
