@@ -5,7 +5,7 @@ import java.util.Random;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MockDataGenerator {
+public class MockDataGenerator1 {
 
     private static final Random random = new Random();
 

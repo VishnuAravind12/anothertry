@@ -26,9 +26,9 @@ import org.springframework.stereotype.Component;
 public class MultiVarAnalyticsGradeRegression {
 
     public void performCrossValidation(int numStudents) {
-        double[][] xData = MockDataGenerator.generateXData(numStudents);
+        double[][] xData = MockDataGenerator1.generateXData(numStudents);
         double[][] normalizedXData = normalize(xData);
-        double[] yData = MockDataGenerator.generateYData(xData);
+        double[] yData = MockDataGenerator1.generateYData(xData);
 
         // Split the data into training and testing sets (80-20 split)
         int trainSize = (int) (0.8 * numStudents);
@@ -87,9 +87,9 @@ public class MultiVarAnalyticsGradeRegression {
     }
 
     public RegressionResult performRegression(int numStudents) {
-        double[][] xData = MockDataGenerator.generateXData(numStudents);
+        double[][] xData = MockDataGenerator1.generateXData(numStudents);
         double[][] normalizedXData = normalize(xData);  // Normalize the xData
-        double[] yData = MockDataGenerator.generateYData(xData);
+        double[] yData = MockDataGenerator1.generateYData(xData);
 
         double[] coefficients = calculateCoefficients(normalizedXData, yData);  // Use normalized xData for regression
 
