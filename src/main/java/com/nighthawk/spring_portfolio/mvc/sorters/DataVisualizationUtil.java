@@ -98,14 +98,21 @@ public class DataVisualizationUtil {
         saveChartAsImage(chart, sortingMethod);
     }
 
-    private static void saveChartAsImage(JFreeChart chart, String fileName) {
+    private static String saveChartAsImage(JFreeChart chart, String baseFileName) {
+        // Generate a unique filename using the baseFileName and a timestamp
+        String timestamp = String.valueOf(System.currentTimeMillis());
+        String fileName = baseFileName + "_" + timestamp + ".png";
+    
         try {
-            File imageFile = new File("src/main/resources/static/images/" + fileName + ".png");
+            File imageFile = new File("src/main/resources/static/images/" + fileName);
             ImageIO.write(chart.createBufferedImage(800, 600), "png", imageFile);
-            System.out.println("Chart saved as " + fileName + ".png");
+            System.out.println("Chart saved as " + fileName);
         } catch (IOException e) {
             System.err.println("Problem occurred creating chart.");
             e.printStackTrace();
         }
-    }
+    
+        // Return the unique filename
+        return fileName;
+    }    
 }
