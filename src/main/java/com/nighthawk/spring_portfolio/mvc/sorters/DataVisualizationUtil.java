@@ -64,7 +64,7 @@ public class DataVisualizationUtil {
         saveChartAsImage(chart, metricName);
     }
 
-    public static void displayChartWithUserPoint(double[][] benchmarkData, int userArrayLength, double userTime, String sortingMethod) {
+    public static String displayChartWithUserPoint(double[][] benchmarkData, int userArrayLength, double userTime, String sortingMethod) {
         XYSeries series = new XYSeries("Benchmark Data");
         for (double[] dataPoint : benchmarkData) {
             series.add(dataPoint[0], dataPoint[1]);
@@ -95,7 +95,7 @@ public class DataVisualizationUtil {
         renderer.setSeriesShapesVisible(1, true);
         chart.getXYPlot().setRenderer(renderer);
 
-        saveChartAsImage(chart, sortingMethod);
+        return saveChartAsImage(chart, sortingMethod);
     }
 
     private static String saveChartAsImage(JFreeChart chart, String baseFileName) {

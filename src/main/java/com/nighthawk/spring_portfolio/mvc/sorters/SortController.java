@@ -40,14 +40,14 @@ public class SortController {
 
         // Visualize data and save chart
         String chartFileName = sorterType + "_sorter_performance_user";
-        DataVisualizationUtil.displayChartWithUserPoint(benchmarkData, arraySize, timeTaken, chartFileName);
+        String savedFileName = DataVisualizationUtil.displayChartWithUserPoint(benchmarkData, arraySize, timeTaken, chartFileName);
 
         // Construct the response
         Map<String, Object> response = new HashMap<>();
         response.put("timeTakenNs", timeTaken);
         response.put("sorterType", sorterType);
         response.put("arraySize", arraySize);
-        response.put("chartImageUrl", "/images/" + chartFileName + ".png");
+        response.put("chartImageUrl", "/images/" + savedFileName);
 
         return ResponseEntity.ok(response);
     }
